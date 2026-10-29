@@ -352,7 +352,7 @@ app.use("/api", (req, res) => {
 });
 
 
-app.use(express.static(path.join(root, "public")));
+app.use(express.static(root));
 
 
 app.use((error, req, res, next) => {
