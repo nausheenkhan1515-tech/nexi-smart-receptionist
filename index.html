@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXI | Nexi Receptionist Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview">
+      <span class="logo">N</span>
+      <span>
+        NEXI
+        <small>SMART RECEPTION</small>
+      </span>
+    </a>
+
+    <p class="menu-label">WORKSPACE</p>
+
+    <nav>
+      <a href="#overview">◈ Overview</a>
+      <a href="#assistant">◉ Voice & Chat</a>
+      <a href="#appointments">▦ Appointments</a>
+      <a href="#requests">☷ Request List</a>
+      <a href="#services">◇ Services</a>
+    </nav>
+
+    <div class="demo-note">
+      <span class="green-dot"></span> College Demo
+      <p>
+        Rule-based assistant<br>
+        No paid AI key required
+      </p>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR DIGITAL FRONT DESK</p>
+        <h1>Receptionist Dashboard</h1>
+      </div>
+
+      <div class="profile">
+        <span class="profile-icon">N</span>
+        <div>
+          Nexi Assistant
+          <small>NEXI</small>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="overview">
+      <div>
+        <span class="tag">NEXI · TECHNOLOGY COMPANY DEMO</span>
+
+        <h2>
+          A smarter welcome.<br>
+          A better <span>conversation.</span>
+        </h2>
+
+        <p>
+          Meet Nexi, your digital receptionist at NEXI.
+          Explore our services, ask questions and create
+          consultation requests.
+        </p>
+
+        <a class="primary button-link" href="#appointments">
+          + Book a Consultation
+        </a>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit">
+          <div class="orb">N</div>
+        </div>
+
+        <div class="sound-bars">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+
+        <p>YOUR VOICE. OUR ASSISTANCE.</p>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Dashboard statistics">
+      <article class="stat">
+        <span>▦ Appointment Requests</span>
+        <h3 id="total-count">0</h3>
+        <small>Saved on the server</small>
+      </article>
+
+      <article class="stat">
+        <span>◷ Pending Requests</span>
+        <h3 id="pending-count">0</h3>
+        <small>Awaiting demo review</small>
+      </article>
+
+      <article class="stat">
+        <span>✓ Confirmed Requests</span>
+        <h3 id="confirmed-count">0</h3>
+        <small>Demo confirmations</small>
+      </article>
+
+      <article class="stat">
+        <span>◇ Technology Services</span>
+        <h3>4</h3>
+        <small>Build · Design · Automate</small>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <article class="panel" id="assistant">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">LET'S START A CONVERSATION</p>
+            <h2>Nexi Assistant</h2>
+          </div>
+
+          <span class="tag">DEMO ASSISTANT</span>
+        </div>
+
+        <div class="voice-box">
+          <button
+            id="mic"
+            type="button"
+            aria-label="Start voice input"
+          >
+            🎙
+          </button>
+
+          <div>
+            <h3>Talk to Nexi</h3>
+            <p id="voice-status" role="status">
+              Click the microphone and ask in English.
+            </p>
+          </div>
+        </div>
+
+        <div class="voice-options">
+          <label>
+            <input
+              type="checkbox"
+              id="voice-enabled"
+              checked
+            >
+            Speak replies
+          </label>
+
+          <button
+            id="stop-voice"
+            type="button"
+            class="small-button"
+          >
+            Stop speaking
+          </button>
+        </div>
+
+        <div class="quick-actions">
+          <button
+            type="button"
+            data-question="What services do you provide?"
+          >
+            Services
+          </button>
+
+          <button
+            type="button"
+            data-question="What is your pricing?"
+          >
+            Pricing
+          </button>
+
+          <button
+            type="button"
+            data-question="What are your office hours?"
+          >
+            Office Hours
+          </button>
+
+          <button
+            type="button"
+            data-question="I want to book a consultation"
+          >
+            Book Meeting
+          </button>
+        </div>
+
+        <div
+          id="chat"
+          class="chat"
+          role="log"
+          aria-live="polite"
+          aria-label="Chat messages"
+        ></div>
+
+        <form id="chat-form" class="chat-form">
+          <input
+            id="user-input"
+            aria-label="Your question"
+            placeholder="Ask Nexi about NEXI..."
+            maxlength="500"
+            autocomplete="off"
+            required
+          >
+
+          <button class="primary" type="submit">
+            Send ↗
+          </button>
+        </form>
+
+        <p class="helper">
+          Predefined company answers, not a general-purpose AI.
+        </p>
+      </article>
+
+      <article class="panel" id="appointments">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">PLAN YOUR NEXT PROJECT</p>
+            <h2>Book a Consultation</h2>
+          </div>
+
+          <span class="calendar-icon">▦</span>
+        </div>
+
+        <p class="muted">
+          Create a local demo request.
+          No email or real booking is sent.
+        </p>
+
+        <form id="appointment-form" class="booking-form">
+          <label>
+            Full name
+            <input
+              name="customer"
+              placeholder="Your name"
+              maxlength="80"
+              required
+            >
+          </label>
+
+          <label>
+            Email address
+            <input
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              maxlength="120"
+              required
+            >
+          </label>
+
+          <label>
+            Service
+            <select name="service" required>
+              <option value="">Choose a service</option>
+              <option>Website Development</option>
+              <option>Mobile App Development</option>
+              <option>Chatbot & Automation</option>
+              <option>IT Support</option>
+            </select>
+          </label>
+
+          <div class="two-fields">
+            <label>
+              Preferred date
+              <input
+                id="booking-date"
+                name="date"
+                type="date"
+                required
+              >
+            </label>
+
+            <label>
+              Preferred time
+              <input
+                name="time"
+                type="time"
+                required
+              >
+            </label>
+          </div>
+
+          <button type="submit" class="primary">
+            Create Appointment Request →
+          </button>
+
+          <p id="booking-status" role="status"></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="panel requests-panel" id="requests">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">YOUR RECEPTION ACTIVITY</p>
+          <h2>Appointment Requests</h2>
+        </div>
+
+        <span class="tag">SERVER DEMO DATA</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Service</th>
+              <th>Date & Time</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="appointment-list"></tbody>
+        </table>
+      </div>
+
+      <p class="helper">
+        Confirm/Delete updates requests on the demo server.
+      </p>
+    </section>
+
+    <section class="services-grid" id="services">
+      <article class="service-card">
+        <span>⌘</span>
+        <h3>Website Development</h3>
+        <p>
+          Business websites, landing pages and web applications.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span>▣</span>
+        <h3>Mobile Applications</h3>
+        <p>
+          Android and iOS application planning and development.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span>✧</span>
+        <h3>Chatbot & Automation</h3>
+        <p>
+          Customer support and reception workflow prototypes.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span>⚙</span>
+        <h3>IT Support</h3>
+        <p>
+          Technical troubleshooting and maintenance enquiries.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+  NEXI · Nexi Receptionist · Fictional College Project ·
+  Requests saved on the demo server
+</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
